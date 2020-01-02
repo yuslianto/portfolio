@@ -1,2 +1,2 @@
-import Me from './me'
+import Me from './Me'
 export default Me
