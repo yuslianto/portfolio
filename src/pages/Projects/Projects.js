@@ -12,15 +12,18 @@ const Projects = ({ user }) => {
           {user.projects.map((project, i) => (
             <ProjectItem key={i}>
               <ProjectTitle>{project.displayName}</ProjectTitle>
+              <div>{project.images.resolutions}</div>
               <p>{project.summary}</p>
               <SkillContainer>
-                {/*
-                  {[...project.languages, ...project.libraries].map((item, j) => (
-                    <Pill key={j}>{item}</Pill>
-                  ))}                
-                */}
+                {[...project.languages, ...project.libraries].map((item, j) => (
+                  <Pill key={j}>{item}</Pill>
+                ))}                
+              </SkillContainer>
+              {/*
+              <SkillContainer>
                 <Pill>{project.primaryLanguage}</Pill>
               </SkillContainer>
+              */}
             </ProjectItem>
           ))}
         </ul>
