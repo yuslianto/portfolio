@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+  /* overflow: hidden */
+}
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+.hamburger-line {
+  @apply w-[30px] h-[2px] bg-dark block my-2 transition duration-300 ease-in-out;
+}
+
+.hamburger-aktif {
+  @apply hamburger-line origin-top-left rotate-45;
+}
+
+.hamburger-aktif2 {
+  @apply hamburger-line scale-0;
+}
+
+.hamburger-aktif3 {
+  @apply hamburger-line  origin-bottom-left -rotate-45;
+}
