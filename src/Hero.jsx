@@ -107,7 +107,7 @@ const Hero = () => {
             </motion.a>
           </motion.div>
           {/* Hero o=image */}
-          <div className="w-full self-end px-4 lg:w-1/2">
+          <div className="w-full self-end px-4 lg:w-1/2 overflow-hidden">
             <div className="mt-10 relative lg:mt-0 lg:right-0">
               <motion.img
                 variants={imageVariants}
