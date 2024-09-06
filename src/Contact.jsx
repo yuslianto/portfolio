@@ -6,7 +6,7 @@ const Contact = () => {
     <section id="contact" className="pt-36 pb-32 bg-white dark:bg-slate-500">
       <div className="container">
         <div className="w-full px-4">
-          <div className="max-w-xl mx-auto text-center mb-16">
+          <div className="max-w-lg mx-auto text-center mb-16">
             <h4 className="font-semibold capitalize text-primary mb-2 text-lg">
               Contact
             </h4>

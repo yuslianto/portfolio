@@ -69,7 +69,7 @@ const Blog = () => {
     <section id="blog" className="pt-36 pb-32 bg-slate-100 dark:bg-slate-600">
       <div className="container">
         <div className="w-full px-4">
-          <div className="mb-16 max-w-xl mx-auto text-center">
+          <div className="mb-16 max-w-lg mx-auto text-center">
             <h4 className="font-semibold capitalize text-primary mb-2 text-lg">
               blog
             </h4>

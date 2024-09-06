@@ -121,7 +121,7 @@ const Footer = () => {
             <p>Jln. Jendral Sudirman</p>
             <p>Indonesia</p>
           </div>
-          
+
           <div className="w-full px-4 mb-12 md:w-1/3">
             <h2 className="text-xl text-white font-semi-bold mb-5">
               Kategori Tulisan
@@ -146,7 +146,7 @@ const Footer = () => {
               {tautanLinks.map((link) => (
                 <li key={link.key}>
                   <a
-                    href={link.link}
+                    href={`#${link.link}`}
                     className="capitalize inline-block text-base hover:text-primary mb-3"
                   >
                     {link.name}
