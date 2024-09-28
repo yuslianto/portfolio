@@ -1,7 +1,34 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useState } from 'react';
 
 const Contact = () => {
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [number, setNumber] = useState(null);
+  const [message, setMessage] = useState('');
+
+  let waNumber = '081354615019';
+
+  // Fungsi untuk mengirim pesan ke WhatsApp
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const phone = waNumber.startsWith('62')
+      ? waNumber
+      : `62${waNumber.slice(1)}`;
+    // Buat URL WhatsApp
+    const urlWA = `https://wa.me/${phone}?text=Halo, nama saya ${name}. ini nomor wa saya ${number}. Pesan saya: ${message}`;
+
+    // Arahkan ke WhatsApp
+    window.open(urlWA, '_blank');
+
+    // Reset form
+    setEmail('');
+    setName('');
+    setNumber('');
+    setMessage('');
+  };
+
   return (
     <section id="contact" className="pt-36 pb-32 bg-white dark:bg-slate-500">
       <div className="container">
@@ -19,7 +46,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <form action="">
+          <form action="" onSubmit={handleSubmit}>
             <div className="w-full lg:mx-auto lg:w-2/3">
               <div className="w-full px-4 mb-8">
                 <label
@@ -32,8 +59,28 @@ const Contact = () => {
                   type="text"
                   name="name"
                   id="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   className="bg-slate-200 text-dark focus:outline-none  rounded-lg focus:ring-primary focus:ring-1 focus:border-primary block w-full p-2.5"
                   placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div className="w-full px-4 mb-8">
+                <label
+                  htmlFor="name"
+                  className="text-base font-bold text-primary capitalize"
+                >
+                  No. Telp
+                </label>
+                <input
+                  type="number"
+                  name="number"
+                  id="number"
+                  value={number}
+                  onChange={(e) => setNumber(e.target.value)}
+                  className="bg-slate-200 text-dark focus:outline-none  rounded-lg focus:ring-primary focus:ring-1 focus:border-primary block w-full p-2.5"
+                  placeholder="Insert Phone Number"
                   required
                 />
               </div>
@@ -48,6 +95,8 @@ const Contact = () => {
                   type="email"
                   name="email"
                   id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="bg-slate-200 text-dark focus:outline-none  rounded-lg focus:ring-primary focus:ring-1 focus:border-primary block w-full p-2.5"
                   placeholder="Your Email"
                   required
@@ -64,6 +113,8 @@ const Contact = () => {
                   type="text"
                   name="message"
                   id="message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                   className="h-32 bg-slate-200 text-dark focus:outline-none  rounded-lg focus:ring-primary focus:ring-1 focus:border-primary block w-full p-2.5"
                   placeholder="Your Message"
                   required
