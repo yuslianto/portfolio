@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion, stagger, useScroll } from 'framer-motion';
 
-import ProfileAv from './assets/profile.png';
+import ProfileAv from './assets/profile2.png';
 
 const Hero = () => {
   const { scrollYProgress } = useScroll();
@@ -115,8 +115,9 @@ const Hero = () => {
                 // animate="animate"
                 whileInView="animate"
                 src={ProfileAv}
+                loading='lazy'
                 alt="profile"
-                className="mx-auto max-w-sm md:max-w-lg -mt-20 md:-mt-40 lg:mt-0 z-[1] relative"
+                className="mx-auto max-w-sm md:max-w-md -mt-20 md:-mt-24 lg:mt-0 z-[1] relative"
               />
               <span className="absolute -bottom-2 z-0 left-1/2 -translate-x-1/2 scale-75 sm:scale-75 md:scale-75">
                 <svg
