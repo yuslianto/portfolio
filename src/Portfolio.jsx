@@ -2,12 +2,14 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 
+import ProjectPortfolio from './assets/project-portfolio.png';
+
 const myPortfolio = [
   {
-    image: 'https://picsum.photos/800/600?random=1',
-    title: 'Project One',
+    image: ProjectPortfolio,
+    title: 'Simple Portfolio',
     description:
-      "This is the description for Project One. It includes details about the project's features, technologies used, and outcomes.",
+      'This project is a modern, responsive personal portfolio website built using React JS, Tailwind CSS, Vite, and Remix Icon. It’s designed to showcase projects, skills, and personal information in a clean and user-friendly interface.',
   },
   {
     image: 'https://picsum.photos/800/600?random=2',
@@ -37,17 +39,27 @@ const myPortfolio = [
 
 const PortfolioCard = ({ image, title, description }) => {
   return (
-    <div className="bg-white hover:scale-110 transition duration-300 ease-in-out rounded-lg shadow-md overflow-hidden m-2 md:w-2/5 dark:bg-slate-100">
+    <div className="bg-white hover:scale-110 transition duration-300 ease-in-out rounded-lg shadow-md overflow-hidden p-2 md:w-2/5 dark:bg-slate-100">
       <img
         src={image}
         alt={title}
-        className="w-full h-48 object-cover object-center"
+        // className="w-full h-48 object-cover object-center"
+        className="w-full h-auto max-h-48 object-contain"
       />
       <div className="p-4">
         <h3 className="font-semibold text-xl text-dark mt-5 mb-3">{title}</h3>
         <p className="text-secondary font-medium text-base line-clamp-2">
           {description}
         </p>
+        <button
+          onClick={() =>
+            window.open('https://react-tailwind-tawny.vercel.app/', '_blank')
+          }
+          type="button"
+          className="font-medium mt-4 text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80 capitalize"
+        >
+          See Demo
+        </button>
       </div>
     </div>
   );
@@ -55,7 +67,10 @@ const PortfolioCard = ({ image, title, description }) => {
 
 const Portfolio = () => {
   return (
-    <section id='portfolio' className="pt-36 pb-32 bg-slate-50 dark:bg-slate-600">
+    <section
+      id="portfolio"
+      className="pt-36 pb-32 bg-slate-50 dark:bg-slate-600"
+    >
       <div className="container max-w-screen-lg">
         <div className="w-full px-4">
           <div className="mb-16 max-w-lg mx-auto text-center">
@@ -71,7 +86,7 @@ const Portfolio = () => {
               elit. Laboriosam, dolorum?
             </p>
           </div>
-          <div className="w-full gap-2 flex flex-wrap justify-center xl:width-10/12">
+          <div className="w-full gap-8 flex flex-wrap justify-center xl:width-10/12">
             {myPortfolio.map((portfolio) => (
               <PortfolioCard
                 key={portfolio.title}
